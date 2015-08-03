@@ -1,0 +1,23 @@
+<div class="container" ng-controller="FlushotsController">
+  <header>
+    <div>
+    <h1>
+      {{employee}}</h1>
+    </div>
+  </header> 
+  <ul>
+    <li ng-repeat="hour in hours track by hour.name">
+      {{testing("hello")}}
+      <h3>{{hour.name}}</h3>
+      <ul>
+        <li ng-repeat="slot in hour.slots">
+          
+          <button ng-if="ownSlot(slot)" class="btn btn-success" style="width:100%" id="{{slot}}" hourid="{{hour._id}}" ng-click="slotAction(slot)">{{hour.name}}:{{getSlotName(slot)}} - {{getSlotCount(slot)}} slots left</button>
+          <button ng-if="!ownSlot(slot) && getSlotCount(slot) > 0" class="btn btn-primary" style="width:100%" id="{{slot}}" hourid="{{hour._id}}" ng-click="slotAction(slot)">{{hour.name}}:{{getSlotName(slot)}} - {{getSlotCount(slot)}} slots left</button>
+          <button ng-if="!ownSlot(slot) && getSlotCount(slot) < 1" class="btn btn-danger" disabled style="width:100%" id="{{slot}}" hourid="{{hour._id}}" ng-click="slotAction(slot)">{{hour.name}}:{{getSlotName(slot)}} - {{getSlotCount(slot)}} slots left</button>
+          <!--<button ng-if="getSlotCount(slot) < 1" class="btn btn-danger" style="width:100%" id="{{slot}}" hourid="{{hour._id}}" ng-click="slotAction(slot)">{{hour.name}}:{{getSlotName(slot)}} - {{getSlotCount(slot)}} slots left</button>-->
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
