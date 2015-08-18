@@ -130,13 +130,13 @@ border-radius: 5px;
 box-shadow:         0px 3px 5px 3px #e5e5e5;
 }
 
-ul.time_slot {
+ul.time_slots {
 padding-bottom:0px;
 margin-left:0;
 padding:0;
 }
 
-ul.time_slot li {
+ul.time_slots li {
 margin-bottom:10px;
 border:0px;
 margin-left:0;
