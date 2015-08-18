@@ -1,15 +1,14 @@
-<div class="container" ng-controller="FlushotsController">
-  <header>
-    <div>
-    <h1>
-      {{employee}}</h1>
-    </div>
-  </header> 
-  <ul>
+<header>
+	<div class="user_email">
+		<h1>{{employee}}</h1>
+	</div>
+</header> 
+  <div class="container" ng-controller="FlushotsController">
+  <ul class="byhour">
     <li ng-repeat="hour in hours track by hour.name">
       {{testing("hello")}}
       <h3>{{hour.name}}</h3>
-      <ul>
+      <ul class="time_slots">
         <li ng-repeat="slot in hour.slots">
           
           <button ng-if="ownSlot(slot)" class="btn btn-success" style="width:100%" id="{{slot}}" hourid="{{hour._id}}" ng-click="slotAction(slot)">{{hour.name}}:{{getSlotName(slot)}} - {{getSlotCount(slot)}} slots left</button>
