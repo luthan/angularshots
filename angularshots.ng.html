@@ -4,6 +4,7 @@
   <div class="user_email">
 		<h1>Hi, {{employee.n['given-name']}}</h1>
 	</div>
+  <div id="outdated"></div>
   <ul class="byhour">
     <li ng-repeat="hour in hours track by hour.name">
       <h3>{{hour.name | hourDisplay}}</h3>
